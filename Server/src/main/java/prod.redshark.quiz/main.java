@@ -1,2 +1,0 @@
-package prod.redshark.quiz
-
