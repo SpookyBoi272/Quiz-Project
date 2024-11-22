@@ -16,7 +16,7 @@ public class DatabaseHook {
 
     public void start(){
         try {
-            FileReader reader = new FileReader("C:\\Users\\niran\\Documents\\Dev_Dir\\Quiz-Project\\Server\\src\\main\\java\\prod\\redshark\\quiz\\login.json");
+            FileReader reader = new FileReader("data/login.json");
             StringBuilder stringBuilder = new StringBuilder();
             int i;
             while ((i = reader.read()) != -1) {

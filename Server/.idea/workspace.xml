@@ -4,30 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4289741b-d61f-4199-bace-81221986f671" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/DatabaseHook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../App/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../App/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/assets/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/../App/src/assets/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/assets/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../App/src/assets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/TheWelcome.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/WelcomeItem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/icons/IconCommunity.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/icons/IconDocumentation.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/icons/IconEcosystem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/icons/IconSupport.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/components/icons/IconTooling.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../App/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/views/AboutView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../App/src/views/AboutView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../App/src/views/HomeView.vue" afterDir="false" />
+    <list default="true" id="4289741b-d61f-4199-bace-81221986f671" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/JavaApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/JavaApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/DatabaseHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/prod/redshark/quiz/DatabaseHook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +60,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\niran\Documents\Dev_Dir\Quiz-Project\Server\data" />
+      <recent name="C:\Users\niran\Documents\Dev_Dir\Quiz-Project\Server" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Server" />
@@ -114,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731517737032</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="...">
+      <option name="closed" value="true" />
+      <created>1731603222015</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731603222015</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tati" />
-    <option name="LAST_COMMIT_MESSAGE" value="tati" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
