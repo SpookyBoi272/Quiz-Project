@@ -21,4 +21,7 @@ public class DatabaseHook {
 
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
 }
