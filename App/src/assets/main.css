@@ -28,8 +28,44 @@ img{
 
 input{
     all: unset;
+    background-color: var(--lightest-color);
+    padding: 4px 8px;
+    color: var(--dark-color);
+    border-radius: 4px;
+}
+
+select{
+    background-color: var(--lightest-color);
+    border: none;
+    padding: 4px 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
 button{
     all: unset;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 16px;
+    margin: 16px auto;
+    cursor: pointer;
 }
+
+button.light{
+    background-color: var(--lighter-color);
+    color: var(--dark-color);
+}
+
+button.light:hover{
+    background-color: var(--light-color);
+}
+
+button.dark{
+    background-color: var(--dark-color);
+    color: var(--lightest-color);
+}
+
+button.dark:hover{
+    background-color: var(--darkbtn-hover);
+}
+
