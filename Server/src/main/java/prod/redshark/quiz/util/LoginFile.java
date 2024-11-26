@@ -8,12 +8,12 @@ import java.io.IOException;
 
 public class LoginFile {
 
-    private String username;
-    private String pwd;
-    private String dbName;
-    private String dbHost;
+    private static String username;
+    private static String pwd;
+    private static String dbName;
+    private static String dbHost;
 
-    public LoginFile(String fileName){
+    public static void INIT(String fileName){
         try(FileReader fileReader = new FileReader(fileName)) {
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -39,18 +39,18 @@ public class LoginFile {
         }
     }
 
-    public String getConnectionURL(){
+    public static String getConnectionURL(){
         return "jdbc:postgresql://" +
                 dbHost +
                 "/" +
                 dbName;
     }
 
-    public String getPwd() {
+    public static String getPwd() {
         return pwd;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 }

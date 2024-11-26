@@ -1,34 +1,37 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
-import {HomeIcon, MagnifyingGlassIcon} from '@heroicons/vue/16/solid'
+import {MagnifyingGlassIcon} from '@heroicons/vue/16/solid'
 
 export default {
-  components: { HomeIcon, MagnifyingGlassIcon }
+  components: { MagnifyingGlassIcon }
 };
 </script>
 
 <template>
-  <header>
+  <header v-if="!$route.meta.hideHeader">
     <div class="logo">
-      <HomeIcon/>
+       <img src="./assets/favicon.ico" alt="logo">
     </div>
     <nav class="nav-links">
-      <RouterLink to="/home">Home</RouterLink>
-      <RouterLink to="/quizes">Quizes</RouterLink>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/quizes">MyQuizes</RouterLink>
       <RouterLink to="/explore">Explore</RouterLink>
       <RouterLink to="/mystats">MyStats</RouterLink>
     </nav>
-    <div class="search-wrapper">
-      <input type="text" name="search" placeholder="Search">
+    <!-- <div class="search-wrapper">
+      <input type="search" name="search" placeholder="Search">
       <div class="search-logo"><MagnifyingGlassIcon/></div>
+    </div> -->
+    <div class="account">
+      ME
     </div>
   </header>
-  <div class="content">
+  <div :class="{'header-hidden-content' : $route.meta.hideHeader , 'content':!$route.meta.hideHeader}">
     <RouterView />
   </div>
 </template>
 
-<style>
+<style scoped>
 header{
   display: flex;
   align-items: center;
@@ -82,6 +85,21 @@ header{
   background-color: var(--lightest-color);
   padding-right: 4px;
   border-radius: 0 16px 16px 0;
+}
+
+.account{
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--lightest-color);
+  border-radius: 100%;
+}
+
+.header-hidden-content{
+  background-color: var(--lighter-color);
+  margin: 8px;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: calc(100vh - 16px);
 }
 
 .content{

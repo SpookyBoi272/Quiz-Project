@@ -1,4 +1,3 @@
--- Active: 1731593249579@@192.168.1.79@5432@quiz
 <script setup>
 import {ref,onMounted} from 'vue';
 
