@@ -1,20 +1,42 @@
 package prod.redshark.quiz.model;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 
+import java.util.List;
+
+@Entity
+@Table(name = "quizzes")
 public class Quiz {
 
-    public int id;
-    public String name;
-    public String description;
-    public String Genre;
-    public ArrayList<Question> questions;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public int getId() {
+    private String name;
+    private String description;
+    private String genre;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
+    private List<Question> questions;
+
+    public Quiz(){
+
+    }
+
+    public Quiz(String name, String description, String genre){
+        this.name = name;
+        this.description=description;
+        this.genre = genre;
+    }
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -35,18 +57,19 @@ public class Quiz {
     }
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
-    public ArrayList<Question> getQuestions() {
+    public List<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(ArrayList<Question> questions) {
+    public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
 }
+

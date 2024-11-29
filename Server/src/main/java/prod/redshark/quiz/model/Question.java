@@ -1,43 +1,67 @@
 package prod.redshark.quiz.model;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import java.util.List;
 
+@Entity
+@Table(name = "questions")
 public class Question {
 
-    public int id;
-    public int quizID;
-    public String question_text;
-    public ArrayList<Option> options;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public int getId() {
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "quiz_id", nullable = false)
+    private Quiz quiz;
+
+    @Column(name = "question_text", nullable = false)
+    private String questionText;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+    private List<Option> options;
+
+    public Question(){}
+
+    public Question(String questionText) {
+        this.questionText = questionText;
+    }
+
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getQuizID() {
-        return quizID;
+    public Quiz getQuiz() {
+        return quiz;
     }
 
-    public void setQuizID(int quizID) {
-        this.quizID = quizID;
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
     }
 
-    public String getQuestion_text() {
-        return question_text;
+    public String getQuestionText() {
+        return questionText;
     }
 
-    public void setQuestion_text(String question_text) {
-        this.question_text = question_text;
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
     }
 
-    public ArrayList<Option> getOptions() {
+    public List<Option> getOptions() {
         return options;
     }
 
-    public void setOptions(ArrayList<Option> options) {
+    public void setOptions(List<Option> options) {
         this.options = options;
     }
 }

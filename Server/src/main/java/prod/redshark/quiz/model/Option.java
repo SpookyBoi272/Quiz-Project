@@ -1,26 +1,51 @@
 package prod.redshark.quiz.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "options")
 public class Option {
 
-    public int id;
-    public int questionID;
-    public String optionText;
-    public Boolean isCorrect;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public int getId() {
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "question_id", nullable = false)
+    private Question question;
+
+    @Column(name = "option_text", nullable = false)
+    private String optionText;
+
+    @Column(name = "is_correct", nullable = false)
+    private boolean isCorrect;
+
+    public Option(){
+
+    }
+
+    public Option(String optionText, boolean isCorrect) {
+        this.optionText = optionText;
+        this.isCorrect = isCorrect;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getQuestionID() {
-        return questionID;
+    public Question getQuestion() {
+        return question;
     }
 
-    public void setQuestionID(int questionID) {
-        this.questionID = questionID;
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     public String getOptionText() {
@@ -31,11 +56,11 @@ public class Option {
         this.optionText = optionText;
     }
 
-    public Boolean getCorrect() {
+    public boolean isCorrect() {
         return isCorrect;
     }
 
-    public void setCorrect(Boolean correct) {
+    public void setCorrect(boolean correct) {
         isCorrect = correct;
     }
 }
