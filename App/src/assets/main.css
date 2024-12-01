@@ -26,7 +26,10 @@ img{
     width: 100%;
 }
 
-input{
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email']{
     all: unset;
     background-color: var(--lightest-color);
     padding: 4px 8px;
@@ -51,21 +54,25 @@ button{
     cursor: pointer;
 }
 
+button:hover{
+    opacity: 0.9;
+}
+
 button.light{
     background-color: var(--lighter-color);
     color: var(--dark-color);
 }
 
-button.light:hover{
+/* button.light:hover{
     background-color: var(--light-color);
-}
+} */
 
 button.dark{
     background-color: var(--dark-color);
     color: var(--lightest-color);
 }
 
-button.dark:hover{
+/* button.dark:hover{
     background-color: var(--darkbtn-hover);
-}
+} */
 
