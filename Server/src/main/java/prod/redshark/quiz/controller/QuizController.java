@@ -1,6 +1,9 @@
 package prod.redshark.quiz.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import prod.redshark.quiz.model.Option;
@@ -18,8 +21,12 @@ public class QuizController {
     private QuizService quizService;
 
     @GetMapping
-    public ResponseEntity<List<Quiz>> getAllQuizzes() {
-        return ResponseEntity.ok(quizService.getAllQuizzes());
+    public Page<Quiz> getAllQuizzes(@RequestParam(defaultValue = "0") int page, @RequestParam (defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page-1,size);
+
+
+
+        return quizService.getAllQuizzes(pageable);
     }
 
     @GetMapping("/{id}")
@@ -31,6 +38,9 @@ public class QuizController {
 
     @PostMapping
     public ResponseEntity<Quiz> createQuiz(@RequestBody Quiz quiz) {
+        quiz.getQuestions().get(0).getOptions().forEach(option -> {
+            System.out.println(option.isCorrect());
+        });
 
         for (Question question : quiz.getQuestions()) {
             question.setQuiz(quiz);
@@ -40,10 +50,6 @@ public class QuizController {
         }
 
         Quiz createdQuiz = quizService.createQuiz(quiz);
-
-        System.out.println(quiz.getDescription());
-        System.out.println(quiz.getQuestions().get(0).getQuestionText());
-        System.out.println(quiz.getQuestions().get(0).getOptions().get(0).getOptionText());
 
 
         return ResponseEntity.ok(createdQuiz);

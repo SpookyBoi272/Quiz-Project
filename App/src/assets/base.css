@@ -5,3 +5,11 @@
     --lightest-color: rgb(244, 238, 255);
     --darkbtn-hover: rgba(66, 72, 116,0.8);
 }
+
+.dark{
+    color: white;
+    --dark-color: rgb(66, 72, 116);
+    --light-color: rgba(0, 0, 0, 0.593);
+    --lighter-color: rgba(0, 0, 0, 0.707);
+    --lightest-color: rgb(0, 0, 0);
+}

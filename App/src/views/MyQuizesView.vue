@@ -43,7 +43,7 @@ const addOption = (questionIndex) =>{
 }
 
 const removeOption = (questionIndex,optionIndex)=>{
-  if(quiz.value.questions[questionIndex].options.length <3){
+  if(quiz.value.questions[questionIndex].options.length < 3){
     console.log("Less than two options are not allowed")
     return
   }
@@ -54,19 +54,18 @@ const removeOption = (questionIndex,optionIndex)=>{
 const submitQuiz = () => {
 
   const transformedData = {
-  ...quiz.value, // Copy the top-level properties (name, description, genre)
-  questions:quiz.value.questions.map((question) => ({
-    questionText: question.questionText,
-    options: question.options.map((option, index) => ({
-      ...option,
-      isCorrect: index === question.correctOption, // Add isCorrect based on correctOption index
+    ...quiz.value, // Copy the top-level properties (name, description, genre)
+    questions:quiz.value.questions.map((question) => ({
+      questionText: question.questionText,
+      options: question.options.map((option, index) => ({
+        ...option,
+        isCorrect: index === question.correctOption, // Add isCorrect based on correctOption index
+      })),
     })),
-  })),
-};
+  };
 
-console.log(transformedData)
-
-ApiService.createQuiz(transformedData)
+  console.log(transformedData);
+  ApiService.createQuiz(transformedData);
 }
 
 </script>
@@ -101,14 +100,18 @@ ApiService.createQuiz(transformedData)
 
       <!-- Options -->
       <div v-for="(option, optIndex) in question.options" :key="optIndex" class="option-group">
-        <label :for="'option-' + index + '-' + optIndex">Option {{ optIndex + 1 }}:</label>
+        <div>
+          <label :for="'option-' + index + '-' + optIndex">Option {{ optIndex + 1 }}:</label>
         <input type="text" :id="'option-' + index + '-' + optIndex" v-model="option.optionText"
           placeholder="Enter option text" />
-        <label>
+        </div>
+        <div>
+          <label>
           <input type="radio" :name="'correct-' + index" :value="optIndex" v-model="question.correctOption" />
           Correct
         </label>
         <button @click="removeOption(index, optIndex)" class="dark">Remove Option</button>
+        </div>
       </div>
       <button @click="addOption(index)" class="dark">Add Option</button>
       
@@ -149,5 +152,11 @@ input[type='text'] {
 .question-group,
 .option-group {
   margin-bottom: 1rem;
+}
+
+
+
+.option-group{
+  display: flex;
 }
 </style>
