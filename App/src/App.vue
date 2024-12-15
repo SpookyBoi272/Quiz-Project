@@ -18,10 +18,7 @@ export default {
       <RouterLink to="/explore">Explore</RouterLink>
       <RouterLink to="/mystats">MyStats</RouterLink>
     </nav>
-    <!-- <div class="search-wrapper">
-      <input type="search" name="search" placeholder="Search">
-      <div class="search-logo"><MagnifyingGlassIcon/></div>
-    </div> -->
+
     <div class="account">
       ME
     </div>
